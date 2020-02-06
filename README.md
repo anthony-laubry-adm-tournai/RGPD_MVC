@@ -20,5 +20,5 @@ Mise en place :
     <add name="ADConnectionString" connectionString="LDAP://xxxxx.xx" />
         => remplacer xxxxx.xx par votreNomDeDomaine.be ou adresse IP du controleur de domaine.
       
-      <add name="RegistreTraitementContext" connectionString="data source=srv-rgpd,49356;initial catalog=RegistreTraitementContext;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
+      <add name="RegistreTraitementContext" connectionString="data source=server,port;initial catalog=RegistreTraitementContext;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
         => remplacer la valeur de data source par l'adresse IP/nom de votre serveur (eventuellement ajouter le port après adresse IP/nom : ,port) qui heberge l'application.
