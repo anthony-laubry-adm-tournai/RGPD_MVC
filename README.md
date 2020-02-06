@@ -10,10 +10,11 @@ Mise en place :
   5) Ne pas oublier de donner les droits en INSERT,SELECT,DELETE et UPDATE (clic droit sur la base de donnée => properties => permission).
   6) Attention : avant de définir les utilisateurs, il convient d'ajouter les services en premier lieu dans la table service.
   7) Les utilisateurs doivent être importer de l'AD dans la table Utilisateur. Les informations nécessaires sont le "DisplayName" et       "LogonName".
-  7) Ajouter les fichiers au sein du projet DEPLOY_RGPD dans un site IIS.
-  8) Configurer les droits du répertoire de l'application dans wwwroot (Tout le monde => controle total, IIS_IUSRS => controle total).
-  9) Ajouter le répertoire "Fichier" dans la racine de l'application.
-  10) Dans le fichier web.config de l'application :
+  8) Ajouter les fichiers au sein du projet DEPLOY_RGPD dans un site IIS.
+  9) Le framework utiliser lors de la configuration du site IIS est .NET framework 4.5
+  10) Configurer les droits du répertoire de l'application dans wwwroot (Tout le monde => controle total, IIS_IUSRS => controle total).
+  11) Ajouter le répertoire "Fichier" dans la racine de l'application.
+  12) Dans le fichier web.config de l'application :
       ---------------------------------------------
    
       <add name="ADConnectionString" connectionString="LDAP://xxxxx.xx" />
