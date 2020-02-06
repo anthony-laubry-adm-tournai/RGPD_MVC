@@ -8,11 +8,11 @@ Mise en place :
   3) Sous Sql server créé la base de données et les tables avec le script db_schema.sql qui se trouvent dans le repertoire "SQL".
   4) Ajouter les données de glossaire avec le script : Glossaire.sql
   5) Ne pas oublier de donner les droits en INSERT,SELECT,DELETE et UPDATE (clic droit sur la base de donnée => properties => permission).
-  6) Attention : Avant de définir les utilisateurs, il convient d'ajouter les services en premier lieu.
-  7) Les utilisateurs doivent être importer de l'AD dans la table Utilisateur. Les informations necessaire sont le "DisplayName" et       "LogonName"
+  6) Attention : avant de définir les utilisateurs, il convient d'ajouter les services en premier lieu dans la table service.
+  7) Les utilisateurs doivent être importer de l'AD dans la table Utilisateur. Les informations nécessaires sont le "DisplayName" et       "LogonName".
   7) Ajouter les fichiers au sein du projet DEPLOY_RGPD dans un site IIS.
   8) Configurer les droits du répertoire de l'application dans wwwroot (Tout le monde => controle total, IIS_IUSRS => controle total).
-  9) Ajouter le repertoire "Fichier" dans la racine de l'application.
+  9) Ajouter le répertoire "Fichier" dans la racine de l'application.
   10) Dans le fichier web.config de l'application :
       ---------------------------------------------
    
