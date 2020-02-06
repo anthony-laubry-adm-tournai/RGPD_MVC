@@ -17,7 +17,7 @@ Mise en place :
   12) Dans le fichier web.config de l'application :
       ---------------------------------------------
    
-      <add name="ADConnectionString" connectionString="LDAP://xxxxx.xx" />
+    <add name="ADConnectionString" connectionString="LDAP://xxxxx.xx" />
         => remplacer xxxxx.xx par votreNomDeDomaine.be ou adresse IP du controleur de domaine.
       
       <add name="RegistreTraitementContext" connectionString="data source=srv-rgpd,49356;initial catalog=RegistreTraitementContext;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
