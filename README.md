@@ -4,7 +4,7 @@ Registre des traitements
 Mise en place :
 
   1) Installation du serveur IIS.
-  2) Installation d'un SQL server Express.
+  2) Installation d'un SQL server Express. Ne pas oublier de vérifier si le service SQL Server Browser est configurer en démarrage automatique.
   3) Sous Sql server créé la base de données et les tables avec le script db_schema.sql qui se trouvent dans le repertoire "SQL".
   4) Ajouter les données de glossaire avec le script : Glossaire.sql
   5) Ne pas oublier de donner les droits en INSERT,SELECT,DELETE et UPDATE (clic droit sur la base de donnée => properties => permission).
