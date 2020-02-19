@@ -21,4 +21,4 @@ Mise en place :
         => remplacer xxxxx.xx par votreNomDeDomaine.be ou adresse IP du controleur de domaine.
       
       <add name="RegistreTraitementContext" connectionString="data source=server,port;initial catalog=RegistreTraitementContext;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
-        => remplacer la valeur de data source par l'adresse IP/nom de votre serveur (eventuellement ajouter le port après adresse IP/nom : ,port) qui heberge l'application.
+        => remplacer la valeur de data source par l'adresse IP/nom de votre serveur SQL (eventuellement ajouter le port après adresse IP/nom : ,port) .
