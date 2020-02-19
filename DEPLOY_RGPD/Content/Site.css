@@ -181,6 +181,23 @@ a.lienAccueil, a.lienDeconnexion {
         color: white;
         background-color: #20CA79;
     }
+
+    .btnMenu_2 {
+    display: inline-block;
+    margin-top: 0.5%;
+    border: 1px solid #F14E56;
+    background-color: white;
+    color: #F14E56;
+    font-weight: bold;
+    min-width: 225px;
+    max-width: 225px;
+    width: 100%;
+}
+
+    .btnMenu_2:hover {
+        color: white;
+        background-color: #F14E56;
+    }
 /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*affichage visuel de l'état d'un traitement.*/
 .isValid:hover {
@@ -472,7 +489,7 @@ input:checked + span {
 
 .table {
     text-align: left;
-    margin-left:-50px;
+    /*margin-left:-50px;*/
     overflow: hidden;
     min-width: 1250px;
     max-width: 1366px;
