@@ -63,12 +63,18 @@ End Code
             (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("SourceMenace")) OrElse _
             (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("SourceRisque")) OrElse _
             (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("Gravite")) OrElse _
-            (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("Vraisemblance")) Then
+            (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("Vraisemblance")) OrElse _
+            (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("TypeIncident")) OrElse _
+            (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("LieuIncident")) OrElse _
+            (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("CauseIncident")) OrElse _
+            (HttpContext.Current.Request.RequestContext.RouteData.Values("controller").ToString().Equals("Incident")) Then
             @If role IsNot Nothing Then
                 @If role.Libelle.ToLower.Equals("agent") Then
-                    @Html.ActionLink("Créer traitement", "create", "Traitement", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                    @Html.ActionLink("Créer traitement", "create", "Traitement", "", htmlAttributes:=New With {.class = "btn btnMenu "})@<br />@<br />@<br />@<br />@<br />@<br />
+                    @Html.ActionLink("Signaler incident", "create", "Incident", "", htmlAttributes:=New With {.class = "btn btnMenu_2 "}) @<br/>
                 ElseIf role.Libelle.ToLower.Equals("contact") Then
-                    @Html.ActionLink("Créer traitement", "create", "Traitement", "", htmlAttributes:=New With {.class = "btn btnMenu "})@<br />
+                    @Html.ActionLink("Créer traitement", "create", "Traitement", "", htmlAttributes:=New With {.class = "btn btnMenu "})@<br />@<br />@<br />@<br />@<br />@<br />
+                    @Html.ActionLink("Signaler incident", "create", "Incident", "", htmlAttributes:=New With {.class = "btn btnMenu_2 "}) @<br />
                     If HttpContext.Current.Request.RequestContext.RouteData.Values("action").ToString().ToLower.Equals("indexdesactive") Then
                     @Html.ActionLink("Traitement(s) actif(s)", "Index", "Traitement", "", htmlAttributes:=New With {.class = "btn btnMenu "})@<br />
                     Else
@@ -78,6 +84,7 @@ End Code
                     @Html.ActionLink("Exportation PDF", "Index", "ExportPDF","", htmlAttributes:=New With {.class = "btn btnMenu "})
                 ElseIf role.Libelle.ToLower.Equals("dpd") Then
                     @Html.ActionLink("Créer traitement", "create", "Traitement", "", htmlAttributes:=New With {.class = "btn btnMenu "})@<br />
+                    @Html.ActionLink("Signaler incident", "create", "Incident", "", htmlAttributes:=New With {.class = "btn btnMenu_2 "}) @<br />
                     @Html.ActionLink("Affecter rôle", "GererRole", "GestionRole", "", htmlAttributes:=New With {.class = "btn btnMenu"})@<br />
 
                     @<ul style="list-style-type: none;padding-left:0px;">
@@ -191,6 +198,33 @@ End Code
                                         @Html.ActionLink("Supprimer", "Delete", "Vraisemblance", "", htmlAttributes:=New With {.class = "btn btnMenu "})
                                     </ul>
                                 </li>
+
+                                <li class="accordion btn btnMenu">Type d'incident</li>
+                                <li class="panel sousMenuConteneur">
+                                    <ul style="list-style-type: none;padding-left:0px;">
+                                        @Html.ActionLink("Ajouter", "Create", "TypeIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                        @Html.ActionLink("Modifier", "Edit", "TypeIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                        @Html.ActionLink("Supprimer", "Delete", "TypeIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                    </ul>
+                                </li>
+
+                                <li class="accordion btn btnMenu">Cause d'incident</li>
+                                <li class="panel sousMenuConteneur">
+                                    <ul style="list-style-type: none;padding-left:0px;">
+                                        @Html.ActionLink("Ajouter", "Create", "CauseIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                        @Html.ActionLink("Modifier", "Edit", "CauseIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                        @Html.ActionLink("Supprimer", "Delete", "CauseIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                    </ul>
+                                </li>
+
+                                <li class="accordion btn btnMenu">Lieu d'incident</li>
+                                <li class="panel sousMenuConteneur">
+                                    <ul style="list-style-type: none;padding-left:0px;">
+                                        @Html.ActionLink("Ajouter", "Create", "LieuIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                        @Html.ActionLink("Modifier", "Edit", "LieuIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                        @Html.ActionLink("Supprimer", "Delete", "LieuIncident", "", htmlAttributes:=New With {.class = "btn btnMenu "})
+                                    </ul>
+                                </li>
                             </ul>
                          </li>
                     </ul>
@@ -281,6 +315,13 @@ End Code
         }
 
         $(function () {
+            $("#tabs").tabs().css({
+                'min-height': '400px',
+                'min-width': '1300px',
+                'margin-left': '-100px',
+                'overflow': 'auto'
+            });
+
             $(".date-picker").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -291,8 +332,6 @@ End Code
 
         });
     </script>
-
-
 
     @RenderSection("scripts", required:=False)
 </body>

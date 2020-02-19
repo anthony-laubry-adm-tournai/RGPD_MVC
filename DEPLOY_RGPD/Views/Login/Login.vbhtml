@@ -31,6 +31,18 @@ End Code
         z-index: 2;
         font-family: 'Exo', sans-serif;
         font-size: 15px;
+        margin-top:25px;
+    }
+
+    .conSel{
+        position: absolute;
+        top: calc(82%);
+        left: calc(47.2%);
+        z-index: 2;
+        font-family: 'Exo', sans-serif;
+        font-size: 15px;
+        margin-left:25px;
+        margin-top:-150px;
     }
 
     body {
@@ -220,12 +232,14 @@ End Code
                 @Html.LabelFor(Function(model) model.Password, htmlAttributes:=New With {.class = "control-label col-md-8 ", .style = "margin-left:78px;"})
                 <div class="col-md-8">
                     @Html.EditorFor(Function(model) model.Password, New With {.htmlAttributes = New With {.class = "form-control usrMdp"}})
-                    @If ViewBag.ErreurConnection IsNot Nothing Then
-                        @Html.ValidationMessageFor(Function(model) model.Password, ViewBag.ErreurConnection.ToString, New With {.class = "text-danger"})
-                    Else
-                        @Html.ValidationMessageFor(Function(model) model.Password, "", New With {.class = "text-danger"})
-                    End If
+                    
                 </div>
+
+                @If ViewBag.ErreurConnection IsNot Nothing Then
+                    @Html.ValidationMessageFor(Function(model) model.Password, ViewBag.ErreurConnection.ToString, New With {.class = "text-danger", .style = "width:260px;margin-left:15px;"})
+                Else
+                    @Html.ValidationMessageFor(Function(model) model.Password, "", New With {.class = "text-danger", .style = "width:260px;"})
+                End If
             </div>
 
             <div class="form-group centrerBt">
@@ -234,6 +248,11 @@ End Code
                 </div>
             </div>
         </div>
+
+         <div class="form-group conSel">
+             @Html.RadioButton("ConType", "LDAP", True) &nbsp; LDAP
+             @Html.RadioButton("ConType", "Local", False) &nbsp; Local
+         </div>
     </div>
     
     @<div class="coord">
