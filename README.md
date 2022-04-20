@@ -9,7 +9,7 @@ Mise en place :
   4) Ajouter les données de glossaire avec le script : Glossaire.sql
   5) Ne pas oublier de donner les droits en INSERT,SELECT,DELETE et UPDATE (clic droit sur la base de donnée => properties => permission).
   6) Attention : avant de définir les utilisateurs, il convient d'ajouter les services en premier lieu dans la table service.
-  7) Les utilisateurs doivent être importés de l'AD dans la table Utilisateur. Les informations nécessaires sont le "DisplayName" et       "LogonName". Il est possible de fournir un petit projet d'import d'utilisateur et service via l'AD, mais il faut au moins Visual studio 2013 afin de l'ouvrir pour changer la valeur des connexions et l'exécuter. Connexion locale possible, en créant les services et utilisateurs mot de passe à la main dans la db.
+  7) Les utilisateurs doivent être importés de l'AD dans la table Utilisateur. Les informations nécessaires sont le "DisplayName" et       "LogonName". Connexion locale possible, en créant les services et utilisateurs mot de passe à la main dans la db.
   8) Ajouter les fichiers au sein du projet DEPLOY_RGPD dans un site IIS.
   9) Le framework utiliser lors de la configuration du site IIS est .NET framework 4.5
   10) Configurer les droits du répertoire de l'application dans wwwroot (Tout le monde => controle total, IIS_IUSRS => controle total).
