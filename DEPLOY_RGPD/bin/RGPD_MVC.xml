@@ -6,6 +6,21 @@ RGPD_MVC
 </name>
 </assembly>
 <members>
-
+<member name="T:RGPD_MVC.Cryptage">
+	<summary>
+ Module = classe static en vb.NET
+ </summary>
+	<remarks></remarks>
+</member><member name="M:RGPD_MVC.Controllers.LoginController.ValidAccess(System.String,System.String)">
+	<summary>
+ Fonction qui valide l'accès d'un utilisateur dans nos programmes développés maison.
+ La première vérification contrôle si l'utilisateur est bien répertorié dans l'Active Directory
+ La deuxième vérification regarde si l'utilisateur en question est dans le groupe de sécurité autorisé
+ à utilisé l'application.
+ </summary>
+	<param name="username">Nom d'utilisateur Active Directory.</param>
+	<param name="password">Mot de passe utilisateur Active Directory.</param>
+	<returns>Retourne True si l'accès est autorisé. Retourne False si l'accès n'est pas autorisé.</returns>
+</member>
 </members>
 </doc>
